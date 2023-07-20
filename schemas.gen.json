@@ -80,6 +80,7 @@
               "$live/sections/PageInclude.tsx",
               "$live/sections/Slot.tsx",
               "$live/sections/UseSlot.tsx",
+              "deco-sites/leadfy-store/sections/SectionList.tsx",
               "deco-sites/leadfy-store/sections/StoresHome.tsx",
               "deco-sites/leadfy-store/sections/StoresPdp.tsx",
               "deco-sites/leadfy-store/sections/Theme.tsx",
@@ -8003,6 +8004,19 @@
       ],
       "title": "deco-cx/live/sections/UseSlot.tsx@Props"
     },
+    "ZGVjby1zaXRlcy9sZWFkZnktc3RvcmUvc2VjdGlvbnMvU2VjdGlvbkxpc3QudHN4@Props": {
+      "type": "object",
+      "properties": {
+        "sections": {
+          "$ref": "#/definitions/ZGVjby1jeC9saXZlL2Jsb2Nrcy9zZWN0aW9uLnRz@Section[]",
+          "title": "Sections"
+        }
+      },
+      "required": [
+        "sections"
+      ],
+      "title": "deco-sites/leadfy-store/sections/SectionList.tsx@Props"
+    },
     "ZGVjby1zaXRlcy9zdGQvY29tcG9uZW50cy90eXBlcy50cw==@Image": {
       "type": "string",
       "format": "image-uri",
@@ -11301,6 +11315,27 @@
         }
       }
     },
+    "ZGVjby1zaXRlcy9sZWFkZnktc3RvcmUvc2VjdGlvbnMvU2VjdGlvbkxpc3QudHN4": {
+      "title": "deco-sites/leadfy-store/sections/SectionList.tsx",
+      "type": "object",
+      "allOf": [
+        {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9sZWFkZnktc3RvcmUvc2VjdGlvbnMvU2VjdGlvbkxpc3QudHN4@Props"
+        }
+      ],
+      "required": [
+        "__resolveType"
+      ],
+      "properties": {
+        "__resolveType": {
+          "type": "string",
+          "enum": [
+            "deco-sites/leadfy-store/sections/SectionList.tsx"
+          ],
+          "default": "deco-sites/leadfy-store/sections/SectionList.tsx"
+        }
+      }
+    },
     "ZGVjby1zaXRlcy9sZWFkZnktc3RvcmUvc2VjdGlvbnMvU3RvcmVzSG9tZS50c3g=": {
       "title": "deco-sites/leadfy-store/sections/StoresHome.tsx",
       "type": "object",
@@ -12567,6 +12602,9 @@
         },
         {
           "$ref": "#/definitions/JGxpdmUvc2VjdGlvbnMvVXNlU2xvdC50c3g="
+        },
+        {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9sZWFkZnktc3RvcmUvc2VjdGlvbnMvU2VjdGlvbkxpc3QudHN4"
         },
         {
           "$ref": "#/definitions/ZGVjby1zaXRlcy9sZWFkZnktc3RvcmUvc2VjdGlvbnMvU3RvcmVzSG9tZS50c3g="
