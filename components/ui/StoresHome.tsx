@@ -58,6 +58,7 @@ export default function StoresHome(
               <Image
                 src={banner.image}
                 width={1100}
+                class="w-full"
                 alt={banner.altText || content.title}
               />
             </div>
