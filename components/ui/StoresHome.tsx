@@ -95,7 +95,9 @@ export const loader = async (
   { stores = [] }: Props,
   req: Request,
 ) => {
-  const idAtUrl = req.url.split("/").pop();
+  const url = new URL(req.url);
+  const idAtUrl = url.pathname.split("/").pop();
+
   const store = stores.find(({ profile }) => profile?.idLoja == idAtUrl);
   console.log(idAtUrl);
 
