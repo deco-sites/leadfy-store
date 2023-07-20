@@ -23,33 +23,19 @@ export default function StoresPdp({ page }: Props) {
           <title>{vehicle.model.toUpperCase()}</title>
         </Head>
         <div>
-          <div class="container flex">
-            <div class="w-full sm:w-1/2 px-5 pt-5 sm:px-0 sm:flex sm:flex-wrap sm:gap-3 sm:pt-10">
+          <div class="container flex flex-col sm:flex-row">
+            <div class="w-full sm:w-1/2 px-5 pt-5 sm:px-0 flex gap-3 sm:flex-wrap sm:pt-10 overflow-auto scrollbar-none">
               {vehicle.images.map((image, idx) => {
-                if (idx == 1) {
-                  return (
-                    <>
-                      <div class="block sm:hidden">
-                        <Form vehicle={vehicle} />
-                      </div>
-                      <Image
-                        class="w-[calc(50%-12px)]"
-                        src={image}
-                        width={550}
-                      />
-                    </>
-                  );
-                }
                 return (
                   <Image
-                    class="w-[calc(50%-12px)]"
+                    class="sm:w-[calc(50%-12px)]"
                     src={image}
                     width={550}
                   />
                 );
               })}
             </div>
-            <div class="w-1/2 max-w-[450px] mx-auto pt-10 sticky top-0 self-start hidden sm:block">
+            <div class="w-full px-5 sm:px-0 sm:w-1/2 sm:max-w-[450px] mx-auto pt-10 sticky top-0 self-start">
               <Form vehicle={vehicle} />
             </div>
           </div>
