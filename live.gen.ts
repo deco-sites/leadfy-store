@@ -3,12 +3,12 @@
 // This file is automatically updated during development when running `dev.ts`.
 
 import { DecoManifest } from "$live/types.ts";
+import * as $$$0 from "./loaders/pdp.ts";
 import * as $$$$0 from "./routes/styles.css.ts";
 import * as $$$$1 from "./routes/_app.tsx";
-import * as $$$$$$$$0 from "./sections/Hero.tsx";
-import * as $$$$$$$$1 from "./sections/Theme.tsx";
-import * as $$$$$$$$2 from "./sections/SimpleTextList.tsx";
-import * as $$$$$$$$3 from "./sections/ParagraphList.tsx";
+import * as $$$$$$$$0 from "./sections/StoresHome.tsx";
+import * as $$$$$$$$1 from "./sections/StoresPdp.tsx";
+import * as $$$$$$$$2 from "./sections/Theme.tsx";
 import * as $live_workflows from "$live/routes/live/workflows/run.ts";
 import * as $live_middleware from "$live/routes/_middleware.ts";
 import * as $live_workbench from "$live/routes/live/workbench.ts";
@@ -135,6 +135,31 @@ import * as i2$$$$$$18 from "deco-sites/std/actions/vtex/wishlist/addItem.ts";
 import * as i2$$$$$$19 from "deco-sites/std/actions/vtex/wishlist/removeItem.ts";
 
 const manifest = {
+  "loaders": {
+    "$live/loaders/state.ts": i2$$$0,
+    "$live/loaders/workflows/events.ts": i2$$$1,
+    "$live/loaders/workflows/get.ts": i2$$$2,
+    "deco-sites/leadfy-store/loaders/pdp.ts": $$$0,
+    "deco-sites/std/loaders/nuvemShop/nuvemShopProductDetailsPage.ts": i2$$$3,
+    "deco-sites/std/loaders/nuvemShop/nuvemShopProductList.ts": i2$$$4,
+    "deco-sites/std/loaders/nuvemShop/nuvemShopProductListingPage.ts": i2$$$5,
+    "deco-sites/std/loaders/vnda/proxy.ts": i2$$$6,
+    "deco-sites/std/loaders/vtex/cart.ts": i2$$$7,
+    "deco-sites/std/loaders/vtex/intelligentSearch/productDetailsPage.ts":
+      i2$$$8,
+    "deco-sites/std/loaders/vtex/intelligentSearch/productList.ts": i2$$$9,
+    "deco-sites/std/loaders/vtex/intelligentSearch/productListingPage.ts":
+      i2$$$10,
+    "deco-sites/std/loaders/vtex/intelligentSearch/suggestions.ts": i2$$$11,
+    "deco-sites/std/loaders/vtex/legacy/productDetailsPage.ts": i2$$$12,
+    "deco-sites/std/loaders/vtex/legacy/productList.ts": i2$$$13,
+    "deco-sites/std/loaders/vtex/legacy/productListingPage.ts": i2$$$14,
+    "deco-sites/std/loaders/vtex/legacy/relatedProductsLoader.ts": i2$$$15,
+    "deco-sites/std/loaders/vtex/navbar.ts": i2$$$16,
+    "deco-sites/std/loaders/vtex/proxy.ts": i2$$$17,
+    "deco-sites/std/loaders/vtex/user.ts": i2$$$18,
+    "deco-sites/std/loaders/vtex/wishlist.ts": i2$$$19,
+  },
   "routes": {
     "./routes/_app.tsx": $$$$1,
     "./routes/_middleware.ts": $live_middleware,
@@ -158,10 +183,9 @@ const manifest = {
     "$live/sections/PageInclude.tsx": i2$$$$$2,
     "$live/sections/Slot.tsx": i2$$$$$3,
     "$live/sections/UseSlot.tsx": i2$$$$$4,
-    "deco-sites/leadfy-store/sections/Hero.tsx": $$$$$$$$0,
-    "deco-sites/leadfy-store/sections/ParagraphList.tsx": $$$$$$$$3,
-    "deco-sites/leadfy-store/sections/SimpleTextList.tsx": $$$$$$$$2,
-    "deco-sites/leadfy-store/sections/Theme.tsx": $$$$$$$$1,
+    "deco-sites/leadfy-store/sections/StoresHome.tsx": $$$$$$$$0,
+    "deco-sites/leadfy-store/sections/StoresPdp.tsx": $$$$$$$$1,
+    "deco-sites/leadfy-store/sections/Theme.tsx": $$$$$$$$2,
     "deco-sites/std/sections/Analytics.tsx": i2$$$$$5,
     "deco-sites/std/sections/configButterCMS.global.tsx": i2$$$$$6,
     "deco-sites/std/sections/configNuvemShop.tsx": i2$$$$$7,
@@ -173,30 +197,6 @@ const manifest = {
     "deco-sites/std/sections/SEOPDP.tsx": i2$$$$$13,
     "deco-sites/std/sections/SEOPLP.tsx": i2$$$$$14,
     "deco-sites/std/sections/VTEXPortalDataLayerCompatibility.tsx": i2$$$$$15,
-  },
-  "loaders": {
-    "$live/loaders/state.ts": i2$$$0,
-    "$live/loaders/workflows/events.ts": i2$$$1,
-    "$live/loaders/workflows/get.ts": i2$$$2,
-    "deco-sites/std/loaders/nuvemShop/nuvemShopProductDetailsPage.ts": i2$$$3,
-    "deco-sites/std/loaders/nuvemShop/nuvemShopProductList.ts": i2$$$4,
-    "deco-sites/std/loaders/nuvemShop/nuvemShopProductListingPage.ts": i2$$$5,
-    "deco-sites/std/loaders/vnda/proxy.ts": i2$$$6,
-    "deco-sites/std/loaders/vtex/cart.ts": i2$$$7,
-    "deco-sites/std/loaders/vtex/intelligentSearch/productDetailsPage.ts":
-      i2$$$8,
-    "deco-sites/std/loaders/vtex/intelligentSearch/productList.ts": i2$$$9,
-    "deco-sites/std/loaders/vtex/intelligentSearch/productListingPage.ts":
-      i2$$$10,
-    "deco-sites/std/loaders/vtex/intelligentSearch/suggestions.ts": i2$$$11,
-    "deco-sites/std/loaders/vtex/legacy/productDetailsPage.ts": i2$$$12,
-    "deco-sites/std/loaders/vtex/legacy/productList.ts": i2$$$13,
-    "deco-sites/std/loaders/vtex/legacy/productListingPage.ts": i2$$$14,
-    "deco-sites/std/loaders/vtex/legacy/relatedProductsLoader.ts": i2$$$15,
-    "deco-sites/std/loaders/vtex/navbar.ts": i2$$$16,
-    "deco-sites/std/loaders/vtex/proxy.ts": i2$$$17,
-    "deco-sites/std/loaders/vtex/user.ts": i2$$$18,
-    "deco-sites/std/loaders/vtex/wishlist.ts": i2$$$19,
   },
   "handlers": {
     "$live/handlers/devPage.ts": i2$$$$0,

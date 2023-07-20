@@ -44,7 +44,7 @@ export function ProductCard(
       <h3 class="text-[34px] text-black louis-bold text-center">
         {vehicle.model.toUpperCase()}
       </h3>
-      <span class="text-[22px] text-[#d1ad57]">R${vehicle.price}</span>
+      <span class="text-[22px] text-[#d1ad57] py-2">R${vehicle.price}</span>
       <div class="px-8">
         <Image
           src={vehicle.images[0]}

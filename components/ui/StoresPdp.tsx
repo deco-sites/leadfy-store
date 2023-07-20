@@ -24,7 +24,7 @@ export default function StoresPdp({ page }: Props) {
         </Head>
         <div>
           <div class="container flex">
-            <div class="w-full sm:w-1/2 px-5 sm:px-0">
+            <div class="w-full sm:w-1/2 px-5 pt-5 sm:px-0 sm:flex sm:flex-wrap sm:gap-3 sm:pt-10">
               {vehicle.images.map((image, idx) => {
                 if (idx == 1) {
                   return (
@@ -33,6 +33,7 @@ export default function StoresPdp({ page }: Props) {
                         <Form vehicle={vehicle} />
                       </div>
                       <Image
+                        class="w-[calc(50%-12px)]"
                         src={image}
                         width={550}
                       />
@@ -41,6 +42,7 @@ export default function StoresPdp({ page }: Props) {
                 }
                 return (
                   <Image
+                    class="w-[calc(50%-12px)]"
                     src={image}
                     width={550}
                   />
