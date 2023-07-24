@@ -99,7 +99,6 @@ export const loader = async (
   const idAtUrl = url.pathname.split("/").pop();
 
   const store = stores.find(({ profile }) => profile?.idLoja == idAtUrl);
-  console.log(idAtUrl);
 
   const response = await fetch(
     `https://autogestor-dealers.s3.us-west-2.amazonaws.com/${idAtUrl}/portals/dealersites/vehicles.json`,

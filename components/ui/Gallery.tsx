@@ -41,7 +41,7 @@ export function ProductCard(
 ) {
   return (
     <div class="p-5 flex flex-col items-center w-full sm:w-[calc(50%-8px)] shadow">
-      <h3 class="text-[34px] text-black louis-bold text-center">
+      <h3 class="text-[34px] text-black louis-bold text-center min-h-[102px] line-clamp-2">
         {vehicle.model.toUpperCase()}
       </h3>
       <span class="text-[22px] text-[#d1ad57] py-2">R${vehicle.price}</span>

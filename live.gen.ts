@@ -4,8 +4,10 @@
 
 import { DecoManifest } from "$live/types.ts";
 import * as $$$0 from "./loaders/pdp.ts";
-import * as $$$$0 from "./routes/styles.css.ts";
-import * as $$$$1 from "./routes/_app.tsx";
+import * as $$$$0 from "./routes/api/airtable.ts";
+import * as $$$$1 from "./routes/styles.css.ts";
+import * as $$$$2 from "./routes/_app.tsx";
+import * as $$$$$0 from "./islands/Form.tsx";
 import * as $$$$$$$$0 from "./sections/StoresHome.tsx";
 import * as $$$$$$$$1 from "./sections/StoresPdp.tsx";
 import * as $$$$$$$$2 from "./sections/Theme.tsx";
@@ -161,9 +163,10 @@ const manifest = {
     "deco-sites/std/loaders/vtex/wishlist.ts": i2$$$19,
   },
   "routes": {
-    "./routes/_app.tsx": $$$$1,
+    "./routes/_app.tsx": $$$$2,
     "./routes/_middleware.ts": $live_middleware,
     "./routes/[...catchall].tsx": $live_catchall,
+    "./routes/api/airtable.ts": $$$$0,
     "./routes/index.tsx": $live_catchall,
     "./routes/live/_meta.ts": $live_meta,
     "./routes/live/editorData.ts": $live_editorData,
@@ -175,7 +178,10 @@ const manifest = {
     "./routes/live/release.ts": $live_release,
     "./routes/live/workbench.ts": $live_workbench,
     "./routes/live/workflows/run.ts": $live_workflows,
-    "./routes/styles.css.ts": $$$$0,
+    "./routes/styles.css.ts": $$$$1,
+  },
+  "islands": {
+    "./islands/Form.tsx": $$$$$0,
   },
   "sections": {
     "$live/sections/Conditional_Beta.tsx": i2$$$$$0,
@@ -288,7 +294,6 @@ const manifest = {
     "deco-sites/std/accounts/vtex.ts": i2$$4,
     "deco-sites/std/accounts/yourViews.ts": i2$$5,
   },
-  "islands": {},
   "baseUrl": import.meta.url,
 };
 
