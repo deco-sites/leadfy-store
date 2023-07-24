@@ -8,9 +8,13 @@ import * as $$$$0 from "./routes/api/airtable.ts";
 import * as $$$$1 from "./routes/styles.css.ts";
 import * as $$$$2 from "./routes/_app.tsx";
 import * as $$$$$0 from "./islands/Form.tsx";
-import * as $$$$$$$$0 from "./sections/StoresHome.tsx";
-import * as $$$$$$$$1 from "./sections/StoresPdp.tsx";
-import * as $$$$$$$$2 from "./sections/Theme.tsx";
+import * as $$$$$$$$0 from "./sections/DealerHome.tsx";
+import * as $$$$$$$$1 from "./sections/DealerList.tsx";
+import * as $$$$$$$$2 from "./sections/LeadfyLogo.tsx";
+import * as $$$$$$$$3 from "./sections/SectionList.tsx";
+import * as $$$$$$$$4 from "./sections/StoresHome.tsx";
+import * as $$$$$$$$5 from "./sections/StoresPdp.tsx";
+import * as $$$$$$$$6 from "./sections/Theme.tsx";
 import * as $live_workflows from "$live/routes/live/workflows/run.ts";
 import * as $live_middleware from "$live/routes/_middleware.ts";
 import * as $live_workbench from "$live/routes/live/workbench.ts";
@@ -189,9 +193,13 @@ const manifest = {
     "$live/sections/PageInclude.tsx": i2$$$$$2,
     "$live/sections/Slot.tsx": i2$$$$$3,
     "$live/sections/UseSlot.tsx": i2$$$$$4,
-    "deco-sites/leadfy-store/sections/StoresHome.tsx": $$$$$$$$0,
-    "deco-sites/leadfy-store/sections/StoresPdp.tsx": $$$$$$$$1,
-    "deco-sites/leadfy-store/sections/Theme.tsx": $$$$$$$$2,
+    "deco-sites/leadfy-store/sections/DealerHome.tsx": $$$$$$$$0,
+    "deco-sites/leadfy-store/sections/DealerList.tsx": $$$$$$$$1,
+    "deco-sites/leadfy-store/sections/LeadfyLogo.tsx": $$$$$$$$2,
+    "deco-sites/leadfy-store/sections/SectionList.tsx": $$$$$$$$3,
+    "deco-sites/leadfy-store/sections/StoresHome.tsx": $$$$$$$$4,
+    "deco-sites/leadfy-store/sections/StoresPdp.tsx": $$$$$$$$5,
+    "deco-sites/leadfy-store/sections/Theme.tsx": $$$$$$$$6,
     "deco-sites/std/sections/Analytics.tsx": i2$$$$$5,
     "deco-sites/std/sections/configButterCMS.global.tsx": i2$$$$$6,
     "deco-sites/std/sections/configNuvemShop.tsx": i2$$$$$7,
