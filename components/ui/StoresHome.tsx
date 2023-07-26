@@ -15,8 +15,6 @@ export interface Profile {
   /** @title id */
   /** @description Store id on Leadfy pannel */
   idLoja: string;
-  whatsappNumber: string;
-  logo: LiveImage;
 }
 
 export interface StoreInformations {
@@ -70,7 +68,7 @@ export default function StoresHome(
           <Gallery
             vehicles={vehicles}
             idLoja={profile.idLoja}
-            whatsapp={profile.whatsappNumber}
+            whatsapp={storeDataFromApi.whatsapp}
           />
         </div>
         <WhatsAppButton whatsapp={storeDataFromApi.whatsapp} />

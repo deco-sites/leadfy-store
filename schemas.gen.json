@@ -8049,20 +8049,10 @@
           "type": "string",
           "description": "Store id on Leadfy pannel",
           "title": "Id Loja"
-        },
-        "whatsappNumber": {
-          "type": "string",
-          "title": "Whatsapp Number"
-        },
-        "logo": {
-          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tcG9uZW50cy90eXBlcy50cw==@Image",
-          "title": "Logo"
         }
       },
       "required": [
-        "idLoja",
-        "whatsappNumber",
-        "logo"
+        "idLoja"
       ],
       "title": "Profile"
     },
