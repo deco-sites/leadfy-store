@@ -1,10 +1,11 @@
 import type {
   PdpReturn,
   Vehicle,
+  VehicleRss,
 } from "deco-sites/leadfy-store/components/types.ts";
 import type { RequestURLParam } from "deco-sites/std/functions/requestToParam.ts";
 
-import { parseString } from "xml2js";
+import { Parser } from "xml2js";
 
 export interface Props {
   idloja: RequestURLParam;
@@ -22,15 +23,10 @@ export default async function searchPdp(
 
   const text = await response.text();
 
-  let json;
-
-  parseString(text, function (err, result) {
-    json = result;
-  });
+  const parser = new Parser();
+  const json: VehicleRss = await parser.parseStringPromise(text);
 
   const vehicles = json.rss.channel[0].item;
-
-  console.log(vehicles);
 
   const pdpResult = {
     idLoja: idloja,
@@ -43,8 +39,6 @@ export default async function searchPdp(
           .number[0],
     },
     result: vehicles.filter((car: Vehicle) => {
-      console.log(car["g:title"][0]);
-      console.log(slug.replaceAll("-", " "));
       return car["g:title"][0].toLowerCase() ==
         slug.replaceAll("-", " ").toLowerCase();
     }),

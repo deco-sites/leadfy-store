@@ -14,7 +14,6 @@ export interface Props {
 
 export default function StoresPdp({ page }: Props) {
   if (page) {
-    console.log(page);
     const vehicle = page.result[0];
     const { storeDataFromApi } = page;
     return (

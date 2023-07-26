@@ -34,3 +34,45 @@ export interface Vehicle {
   "g:google_product_category": string[];
   "location_id": string[];
 }
+
+interface Whatsapp {
+  whatsapp: Array<{ number: string[] }>;
+}
+
+export interface Location {
+  id: string[];
+  cep: string[];
+  address: string[];
+  number: string[];
+  neighborhood: string[];
+  complement: string[];
+  city: string[];
+  uf: string[];
+  state: string[];
+  whatsapps: Whatsapp[];
+}
+
+export interface VehicleLocation {
+  location: Location[];
+}
+
+export interface RssChannel {
+  title: string[];
+  description: string[];
+  link: string[];
+  logo: string[];
+  locations: VehicleLocation[];
+  item: Vehicle[];
+}
+
+export interface RssFeed {
+  $: {
+    "xmlns:g": string;
+    version: string;
+  };
+  channel: RssChannel[];
+}
+
+export interface VehicleRss {
+  rss: RssFeed;
+}

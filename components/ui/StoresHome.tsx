@@ -3,12 +3,13 @@ import type { Image as LiveImage } from "deco-sites/std/components/types.ts";
 import WhatsAppButton from "deco-sites/leadfy-store/components/ui/WhatsAppButton.tsx";
 
 import type { SectionProps } from "$live/mod.ts";
+import type { VehicleRss } from "deco-sites/leadfy-store/components/types.ts";
 
 import { Head } from "$fresh/runtime.ts";
 
 import Gallery from "deco-sites/leadfy-store/components/ui/Gallery.tsx";
 
-import { parseString } from "xml2js";
+import { Parser } from "xml2js";
 
 export interface Profile {
   /** @title id */
@@ -101,11 +102,8 @@ export const loader = async (
 
   const text = await response.text();
 
-  let json;
-
-  parseString(text, function (err, result) {
-    json = result;
-  });
+  const parser = new Parser();
+  const json: VehicleRss = await parser.parseStringPromise(text);
 
   const vehicles = json.rss.channel[0].item;
 
