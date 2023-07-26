@@ -1,7 +1,6 @@
-import type { LoaderReturnType } from "$live/types.ts";
-import type { PlpReturn } from "deco-sites/leadfy-store/components/types.ts";
-
 import Image from "deco-sites/std/components/Image.tsx";
+
+import { formatPrice } from "deco-sites/leadfy-store/sdk/format.ts";
 
 import type {
   Vehicle,
@@ -17,7 +16,7 @@ export default function Gallery(
 ) {
   return (
     <div class="pt-5">
-      <div class="container flex flex-wrap gap-2 px-5 sm:px-0">
+      <div class="container flex flex-wrap gap-2 px-5 sm:px-0 py-5">
         {vehicles.map((vehicle: Vehicle) => {
           return (
             <ProductCard
@@ -41,18 +40,28 @@ export function ProductCard(
 ) {
   return (
     <div class="p-5 flex flex-col items-center w-full sm:w-[calc(50%-8px)] shadow">
-      <h3 class="text-[34px] text-black louis-bold text-center min-h-[102px] line-clamp-2">
-        {vehicle.model.toUpperCase()}
+      <h3 class="text-[34px] text-black louis-bold text-center min-h-[102px] flex items-center ">
+        {vehicle["g:title"][0].toUpperCase()}
       </h3>
-      <span class="text-[22px] text-[#d1ad57] py-2">R${vehicle.price}</span>
-      <div class="px-8">
-        <Image
-          src={vehicle.images[0]}
-          width={516}
-        />
+      <span class="text-[32px] font-bold text-[#d1ad57] py-2">
+        {formatPrice(Number(vehicle["g:price"][0]))}
+      </span>
+      <span class="text-[16px] font-semibold pb-2 min-h-[80px]">
+        {vehicle["g:description"][0]}
+      </span>
+      <div class="px-0 sm:px-8">
+        <div class="sm:min-h-[320px]">
+          <Image
+            src={vehicle["g:image_link"][0]}
+            width={516}
+          />
+        </div>
+
         <div class="flex flex-col gap-3 py-3">
           <a
-            href={`/${idLoja}/${vehicle.title.replaceAll(" ", "-")}`}
+            href={`/${idLoja}/${
+              vehicle["g:title"][0].replaceAll(" ", "-").toLowerCase()
+            }`}
             class="bg-[#d1ad57] text-[white] tracking-[3px] w-full py-2.5 flex justify-center items-center"
           >
             Tenho interesse

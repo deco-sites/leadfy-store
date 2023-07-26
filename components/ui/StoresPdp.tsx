@@ -1,13 +1,9 @@
 import type { LoaderReturnType } from "$live/types.ts";
 
-import type {
-  PdpReturn,
-  Vehicle,
-  Vehicles,
-} from "deco-sites/leadfy-store/components/types.ts";
+import type { PdpReturn } from "deco-sites/leadfy-store/components/types.ts";
 
 import Form from "deco-sites/leadfy-store/islands/Form.tsx";
-
+import WhatsAppButton from "deco-sites/leadfy-store/components/ui/WhatsAppButton.tsx";
 import Image from "deco-sites/std/components/Image.tsx";
 
 import { Head } from "$fresh/runtime.ts";
@@ -18,19 +14,39 @@ export interface Props {
 
 export default function StoresPdp({ page }: Props) {
   if (page) {
+    console.log(page);
     const vehicle = page.result[0];
+    const { storeDataFromApi } = page;
     return (
       <>
         <Head>
-          <title>{vehicle.model.toUpperCase()}</title>
+          <title>{vehicle["g:title"][0]}</title>
+          <link rel="icon" type="image/png" href={storeDataFromApi.logo}></link>
         </Head>
         <div>
+          <div class="container px-12 py-7 flex justify-center">
+            <a href={`/${page.idLoja}`}>
+              <Image
+                src={storeDataFromApi.logo}
+                width={200}
+                alt={storeDataFromApi.title}
+              />
+            </a>
+          </div>
           <div class="container flex flex-col sm:flex-row">
-            <div class="w-full sm:w-1/2 px-5 pt-5 sm:px-0 flex gap-3 sm:flex-wrap sm:pt-10 overflow-auto scrollbar-none">
-              {vehicle.images.map((image, idx) => {
+            <div
+              class={`w-full sm:w-1/2 px-5 pt-5 sm:px-0 flex gap-3 sm:flex-wrap sm:pt-10 overflow-auto scrollbar-none ${
+                vehicle["g:image_link"].length == 1 && "items-center"
+              }`}
+            >
+              {vehicle["g:image_link"].map((image: string, idx: number) => {
                 return (
                   <Image
-                    class="sm:w-[calc(50%-12px)]"
+                    class={`${
+                      vehicle["g:image_link"].length > 1
+                        ? "sm:w-[calc(50%-12px)]"
+                        : "w-full"
+                    }`}
                     src={image}
                     width={550}
                   />
@@ -42,6 +58,7 @@ export default function StoresPdp({ page }: Props) {
             </div>
           </div>
         </div>
+        <WhatsAppButton whatsapp={storeDataFromApi.whatsapp} />
       </>
     );
   }

@@ -3939,234 +3939,120 @@
     "ZGVjby1zaXRlcy9sZWFkZnktc3RvcmUvY29tcG9uZW50cy90eXBlcy50cw==@Vehicle": {
       "type": "object",
       "properties": {
-        "vehicle_id": {
-          "type": "number",
-          "title": "Vehicle_id"
-        },
-        "date": {
-          "type": "string",
-          "title": "Date"
-        },
-        "last_update": {
-          "type": "string",
-          "title": "Last_update"
-        },
-        "title": {
-          "type": "string",
-          "title": "Title"
-        },
-        "category": {
-          "type": "string",
-          "title": "Category"
-        },
-        "description": {
-          "type": "string",
-          "title": "Description"
-        },
-        "accessories": {
+        "g:id": {
           "type": "array",
           "items": {
             "type": "string"
           },
-          "title": "Accessories"
+          "title": "G:id"
         },
-        "make": {
-          "type": "string",
-          "title": "Make"
-        },
-        "body_type": {
-          "type": "string",
-          "title": "Body_type"
-        },
-        "model": {
-          "type": "string",
-          "title": "Model"
-        },
-        "model_name": {
-          "type": "string",
-          "title": "Model_name"
-        },
-        "version": {
-          "type": "string",
-          "title": "Version"
-        },
-        "year": {
-          "type": "number",
-          "title": "Year"
-        },
-        "fabric_year": {
-          "type": "number",
-          "title": "Fabric_year"
-        },
-        "condition": {
-          "type": "string",
-          "title": "Condition"
-        },
-        "mileage": {
-          "type": "number",
-          "title": "Mileage"
-        },
-        "highligh": {
-          "type": "string",
-          "title": "Highligh"
-        },
-        "fuel": {
-          "type": "string",
-          "title": "Fuel"
-        },
-        "gear": {
-          "type": "string",
-          "title": "Gear"
-        },
-        "plate": {
-          "type": "string",
-          "title": "Plate"
-        },
-        "doors": {
-          "type": "number",
-          "title": "Doors"
-        },
-        "color": {
-          "type": "string",
-          "title": "Color"
-        },
-        "tags": {
-          "type": "string",
-          "title": "Tags"
-        },
-        "price": {
-          "type": "string",
-          "title": "Price"
-        },
-        "promotion_price": {
-          "type": "string",
-          "title": "Promotion_price"
-        },
-        "transfer_price": {
-          "type": "string",
-          "title": "Transfer_price"
-        },
-        "seller": {
-          "type": "string",
-          "title": "Seller"
-        },
-        "seller_cnpj": {
-          "type": "string",
-          "title": "Seller_cnpj"
-        },
-        "phone": {
-          "type": "string",
-          "title": "Phone"
-        },
-        "location_code": {
-          "type": "number",
-          "title": "Location_code"
-        },
-        "location_country": {
-          "type": "string",
-          "title": "Location_country"
-        },
-        "location_state": {
-          "type": "string",
-          "title": "Location_state"
-        },
-        "location_city": {
-          "type": "string",
-          "title": "Location_city"
-        },
-        "zip_code": {
-          "type": "string",
-          "title": "Zip_code"
-        },
-        "neighborhood": {
-          "type": "string",
-          "title": "Neighborhood"
-        },
-        "location_street": {
-          "type": "string",
-          "title": "Location_street"
-        },
-        "location_number": {
-          "type": "string",
-          "title": "Location_number"
-        },
-        "chassi": {
-          "type": "null",
-          "title": "Chassi"
-        },
-        "mvs": {
-          "type": "null",
-          "title": "Mvs"
-        },
-        "images": {
+        "g:title": {
           "type": "array",
           "items": {
             "type": "string"
           },
-          "title": "Images"
+          "title": "G:title"
         },
-        "video": {
-          "type": "null",
-          "title": "Video"
+        "g:description": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "title": "G:description"
         },
-        "fipe": {
-          "type": "null",
-          "title": "Fipe"
+        "g:link": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "title": "G:link"
         },
-        "pericia": {
-          "type": "null",
-          "title": "Pericia"
+        "g:image_link": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "title": "G:image_link"
         },
-        "megaimagens_360": {
-          "type": "string",
-          "title": "Megaimagens_360"
+        "g:additional_image_link": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "title": "G:additional_image_link"
+        },
+        "g:brand": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "title": "G:brand"
+        },
+        "g:color": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "title": "G:color"
+        },
+        "g:condition": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "title": "G:condition"
+        },
+        "g:price": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "title": "G:price"
+        },
+        "g:size": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "title": "G:size"
+        },
+        "g:availability": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "title": "G:availability"
+        },
+        "g:google_product_category": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "title": "G:google_product_category"
+        },
+        "location_id": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "title": "Location_id"
         }
       },
       "required": [
-        "vehicle_id",
-        "date",
-        "last_update",
-        "title",
-        "category",
-        "description",
-        "accessories",
-        "make",
-        "body_type",
-        "model",
-        "model_name",
-        "version",
-        "year",
-        "fabric_year",
-        "condition",
-        "mileage",
-        "highligh",
-        "fuel",
-        "gear",
-        "plate",
-        "doors",
-        "color",
-        "tags",
-        "price",
-        "promotion_price",
-        "transfer_price",
-        "seller",
-        "seller_cnpj",
-        "phone",
-        "location_code",
-        "location_country",
-        "location_state",
-        "location_city",
-        "zip_code",
-        "neighborhood",
-        "location_street",
-        "location_number",
-        "chassi",
-        "mvs",
-        "images",
-        "video",
-        "fipe",
-        "pericia",
-        "megaimagens_360"
+        "g:id",
+        "g:title",
+        "g:description",
+        "g:link",
+        "g:image_link",
+        "g:additional_image_link",
+        "g:brand",
+        "g:color",
+        "g:condition",
+        "g:price",
+        "g:size",
+        "g:availability",
+        "g:google_product_category",
+        "location_id"
       ],
       "title": "Vehicle"
     },
@@ -4176,6 +4062,34 @@
         "$ref": "#/definitions/ZGVjby1zaXRlcy9sZWFkZnktc3RvcmUvY29tcG9uZW50cy90eXBlcy50cw==@Vehicle"
       },
       "title": "Vehicle[]"
+    },
+    "ZGVjby1zaXRlcy9sZWFkZnktc3RvcmUvY29tcG9uZW50cy90eXBlcy50cw==@storeDataFromApi": {
+      "type": "object",
+      "properties": {
+        "title": {
+          "type": "string",
+          "title": "Title"
+        },
+        "description": {
+          "type": "string",
+          "title": "Description"
+        },
+        "logo": {
+          "type": "string",
+          "title": "Logo"
+        },
+        "whatsapp": {
+          "type": "string",
+          "title": "Whatsapp"
+        }
+      },
+      "required": [
+        "title",
+        "description",
+        "logo",
+        "whatsapp"
+      ],
+      "title": "storeDataFromApi"
     },
     "ZGVjby1zaXRlcy9sZWFkZnktc3RvcmUvY29tcG9uZW50cy90eXBlcy50cw==@PdpReturn": {
       "anyOf": [
@@ -4192,11 +4106,16 @@
             "result": {
               "$ref": "#/definitions/ZGVjby1zaXRlcy9sZWFkZnktc3RvcmUvY29tcG9uZW50cy90eXBlcy50cw==@Vehicle[]",
               "title": "Result"
+            },
+            "storeDataFromApi": {
+              "$ref": "#/definitions/ZGVjby1zaXRlcy9sZWFkZnktc3RvcmUvY29tcG9uZW50cy90eXBlcy50cw==@storeDataFromApi",
+              "title": "Store Data From Api"
             }
           },
           "required": [
             "idLoja",
-            "result"
+            "result",
+            "storeDataFromApi"
           ],
           "title": "deco-sites/leadfy-store/components/types.ts@PdpReturn"
         },
@@ -8175,35 +8094,11 @@
           },
           "required": [],
           "title": "Banner"
-        },
-        "content": {
-          "type": "object",
-          "properties": {
-            "title": {
-              "type": "string",
-              "title": "Title"
-            },
-            "subtitle": {
-              "type": "string",
-              "title": "Subtitle"
-            },
-            "text": {
-              "type": "string",
-              "title": "Text"
-            }
-          },
-          "required": [
-            "title",
-            "subtitle",
-            "text"
-          ],
-          "title": "Content"
         }
       },
       "required": [
         "label",
-        "profile",
-        "content"
+        "profile"
       ],
       "title": "StoreInformations"
     },

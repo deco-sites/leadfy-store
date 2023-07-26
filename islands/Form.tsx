@@ -2,6 +2,8 @@ import type { Vehicle } from "deco-sites/leadfy-store/components/types.ts";
 
 import { useSignal } from "@preact/signals";
 
+import { formatPrice } from "deco-sites/leadfy-store/sdk/format.ts";
+
 export default function Form(
   { vehicle, idLoja }: { vehicle: Vehicle; idLoja: string },
 ) {
@@ -32,7 +34,7 @@ export default function Form(
             "Telefone": telefone.value,
             "Email": email.value,
             "CPF": CPF.value,
-            "Carro": vehicle.title,
+            "Carro": vehicle["g:title"][0],
           },
         },
       ],
@@ -63,9 +65,11 @@ export default function Form(
   return (
     <div>
       <h1 class="text-[34px] text-black louis-bold">
-        {vehicle.model.toUpperCase()}
+        {vehicle["g:title"][0].toUpperCase()}
       </h1>
-      <span class="text-[22px] text-[#d1ad57]">R${vehicle.price}</span>
+      <span class="text-[22px] text-[#d1ad57]">
+        {formatPrice(Number(vehicle["g:price"][0]))}
+      </span>
 
       <form
         action=""
@@ -123,7 +127,7 @@ export default function Form(
       <div>
         <p
           class="text-[20px]"
-          dangerouslySetInnerHTML={{ __html: vehicle.description }}
+          dangerouslySetInnerHTML={{ __html: vehicle["g:description"][0] }}
         >
         </p>
       </div>

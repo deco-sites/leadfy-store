@@ -1,12 +1,14 @@
 import Image from "deco-sites/std/components/Image.tsx";
 import type { Image as LiveImage } from "deco-sites/std/components/types.ts";
-import type { RequestURLParam } from "deco-sites/std/functions/requestToParam.ts";
+import WhatsAppButton from "deco-sites/leadfy-store/components/ui/WhatsAppButton.tsx";
 
 import type { SectionProps } from "$live/mod.ts";
 
 import { Head } from "$fresh/runtime.ts";
 
 import Gallery from "deco-sites/leadfy-store/components/ui/Gallery.tsx";
+
+import { parseString } from "xml2js";
 
 export interface Profile {
   /** @title id */
@@ -23,11 +25,6 @@ export interface StoreInformations {
     image?: LiveImage;
     altText?: string;
   };
-  content: {
-    title: string;
-    subtitle: string;
-    text: string;
-  };
 }
 
 export interface Props {
@@ -35,22 +32,22 @@ export interface Props {
 }
 
 export default function StoresHome(
-  { store, vehicles }: SectionProps<typeof loader>,
+  { store, vehicles, storeDataFromApi }: SectionProps<typeof loader>,
 ) {
   if (store) {
-    const { profile, banner, content } = store;
+    const { profile, banner } = store;
     return (
       <>
         <Head>
-          <title>{content.title}</title>
-          <link rel="icon" type="image/png" href={profile.logo}></link>
+          <title>{storeDataFromApi.title}</title>
+          <link rel="icon" type="image/png" href={storeDataFromApi.logo}></link>
         </Head>
         <div>
           <div class="container px-12 py-7 flex justify-center">
             <Image
-              src={profile.logo}
+              src={storeDataFromApi.logo}
               width={200}
-              alt={content.title}
+              alt={storeDataFromApi.title}
             />
           </div>
           {banner && banner.image && (
@@ -59,18 +56,15 @@ export default function StoresHome(
                 src={banner.image}
                 width={1100}
                 class="w-full"
-                alt={banner.altText || content.title}
+                alt={banner.altText || storeDataFromApi.title}
               />
             </div>
           )}
           <div class="container text-center">
             <h1 class="text-[44px] my-3 louis-bold text-black">
-              {content.title}
+              {storeDataFromApi.title}
             </h1>
-            <h2 class="text-[30px]">{content.subtitle}</h2>
-            <p class="text-[20px] louis-bold text-[#1a1b1f] opacity-60">
-              {content.text}
-            </p>
+            <h2 class="text-[30px]">{storeDataFromApi.description}</h2>
           </div>
           <Gallery
             vehicles={vehicles}
@@ -78,6 +72,7 @@ export default function StoresHome(
             whatsapp={profile.whatsappNumber}
           />
         </div>
+        <WhatsAppButton whatsapp={storeDataFromApi.whatsapp} />
       </>
     );
   }
@@ -101,9 +96,27 @@ export const loader = async (
   const store = stores.find(({ profile }) => profile?.idLoja == idAtUrl);
 
   const response = await fetch(
-    `https://autogestor-dealers.s3.us-west-2.amazonaws.com/${idAtUrl}/portals/dealersites/vehicles.json`,
+    `https://s3.agsistema.net/${idAtUrl}/portals/c7power/vehicles.xml`,
   );
-  const vehicles = await response.json();
 
-  return { store, vehicles };
+  const text = await response.text();
+
+  let json;
+
+  parseString(text, function (err, result) {
+    json = result;
+  });
+
+  const vehicles = json.rss.channel[0].item;
+
+  const storeDataFromApi = {
+    title: json.rss.channel[0].title[0],
+    description: json.rss.channel[0].description[0],
+    logo: json.rss.channel[0].logo[0],
+    whatsapp:
+      json.rss.channel[0].locations[0].location[0].whatsapps[0].whatsapp[0]
+        .number[0],
+  };
+
+  return { store, vehicles, storeDataFromApi };
 };
